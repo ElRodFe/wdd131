@@ -1,3 +1,4 @@
+/* ---------- Fonts and Colors ---------- */
 :root {
     --font-heading: 'Inter', sans-serif;
     --font-body: 'Roboto', sans-serif;
@@ -103,9 +104,70 @@ main h1 {
     padding-bottom: 1rem;
 }
 
-.card1 p,
-.card2 p {
+.card1 p {
     padding: 1rem;
+    line-height: 1.7;
+}
+
+.card2 ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+    list-style-position: inside;
+}
+
+.card1 h3:nth-of-type(2) {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-secondary);
+    position: relative;
+}
+
+.card1 h3:nth-of-type(2)::after {
+    content: "";
+    display: block;
+    width: 60%;
+    height: 1px;
+    background-color: #ccc;
+    margin: 0.75rem auto 0;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.5rem;
+}
+
+.about-content p {
+    flex: 1;
+    line-height: 1.7;
+}
+
+.about-content img {
+    width: 180px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.country-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 0 1.5rem 1.5rem;
+}
+
+.country-content img {
+    width: 150px;
+    height: auto;
+    border: 1px solid #ccc;
+    flex-shrink: 0;
+}
+
+.country-content p {
     line-height: 1.7;
 }
 
