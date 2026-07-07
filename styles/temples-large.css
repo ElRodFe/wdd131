@@ -1,0 +1,28 @@
+@media screen and (min-width: 768px) {
+
+    #menu {
+        display: none;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        gap: 2rem;
+        background: none;
+    }
+
+    nav a {
+        padding: 0;
+    }
+
+    #temples {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
