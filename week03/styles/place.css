@@ -1,0 +1,143 @@
+/* ---------- Root ---------- */
+
+:root {
+    --font-heading: 'Inter', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+
+    --color-primary: #213A53;
+    --color-secondary: #F3C6D1;
+    --color-background: #F7F5F0;
+}
+
+/* ---------- Reset ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--color-background);
+    font-family: var(--font-body);
+    color: #222;
+}
+
+/* ---------- Header ---------- */
+
+header {
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+header h1 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+}
+
+/* ---------- Main ---------- */
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---------- Hero ---------- */
+
+.hero picture,
+.hero img {
+    display: block;
+    width: 100%;
+}
+
+.hero img {
+    height: auto;
+}
+
+/* ---------- Cards ---------- */
+
+.data,
+.weather {
+    background: var(--color-background);
+    margin: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,.15);
+}
+
+.data h2,
+.weather h2 {
+    font-family: var(--font-heading);
+    margin-bottom: 1rem;
+}
+
+.data p,
+.weather p {
+    margin: .5rem 0;
+}
+
+.data strong,
+.weather strong {
+    color: var(--color-primary);
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    text-align: center;
+    padding: 1rem;
+    line-height: 1.6;
+}
+
+/* ---------- Desktop ---------- */
+
+@media (min-width:1000px) {
+
+    main {
+        position: relative;
+    }
+
+    .hero {
+        position: relative;
+    }
+
+    .hero img {
+        display: block;
+        width: 100%;
+    }
+
+    /* Floating cards */
+
+    .data,
+    .weather {
+        position: absolute;
+
+        width: 280px;
+
+        background: var(--color-background);
+
+        margin: 0;
+        z-index: 5;
+    }
+
+    .data {
+        top: 2rem;
+        left: 2rem;
+    }
+
+    .weather {
+        right: 2rem;
+        bottom: 2rem;
+    }
+
+    /* Decorative weather icon */
+
+    .weather h2::after {
+        content: " ⛅";
+    }
+}

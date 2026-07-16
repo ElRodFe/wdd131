@@ -8,7 +8,11 @@
 
     <title>Country Page - Elías Rodríguez</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;500&display=swap">
     <link rel="stylesheet" href="styles/place.css">
+
     <script src="scripts/place.js" defer></script>
 </head>
 <body>
@@ -17,6 +21,15 @@
     </header>
 
     <main>
+
+        <div class="hero">
+            <picture>
+                <source srcset="images/japan-large.webp" media="(min-width: 1000px)">
+                <source srcset="images/japan-medium.webp" media="(min-width: 500px)">
+                <img src="images/japan-small.webp" width="1500" height="1000" alt="Image of Kyoto City, Japan">
+            </picture>
+        </div>
+
         <div class="data">
             <h2>Data</h2>
             <p><strong>Area:</strong> 377.975km²</p>
@@ -29,16 +42,13 @@
             <p><strong>Internet TLD:</strong> .jp</p>
         </div>
 
-        <div class="hero">
-            <picture>
-                <source srcset="images/japan-large.webp" media="(min-width: 1000px)">
-                <source srcset="images/japan-medium.webp" media="(min-width: 500px)">
-                <img src="images/japan-small.webp" width="1500" height="1000" alt="Image of Kyoto City, Japan">
-            </picture>
-        </div>
-
         <div class="weather">
             <h2>Weather</h2>
+
+            <p><strong>Temperature:</strong> <span id="temp"></span></p>
+            <p><strong>Conditions:</strong> <span id="conditions"></span></p>
+            <p><strong>Wind:</strong> <span id="wind"></span></p>
+            <p><strong>Wind Chill:</strong> <span id="windChill"></span></p>
         </div>
     </main>
 
