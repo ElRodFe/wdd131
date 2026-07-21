@@ -80,7 +80,7 @@ const temples = [
     location: "Tokyo, Japan",
     dedicated: "1980, October, 28",
     area: 53997,
-    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/tokyo-japan-temple/tokyo-japan-temple-26340-main.jpg"
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/tokyo-japan-temple/tokyo-japan-temple-57277.jpg"
   },
   {
     templeName: "Bahia Blanca Argentina",
@@ -94,33 +94,58 @@ const temples = [
 const templesdiv = document.querySelector("#temples")
 
 //Create a card for every temple in the array and append the card to the div element
-temples.forEach( temple => {
-  let templeCard = document.createElement("section");
+function displayAll() {
 
-  let name = document.createElement("h2");
-  name.textContent = temple.templeName;
+  templesdiv.innerHTML = "";
 
-  let location = document.createElement("p");
-  location.innerHTML = `<strong>Location:</strong> ${temple.location}`;
+  temples.forEach( temple => {
+    let templeCard = document.createElement("section");
 
-  let dedicated = document.createElement("p");
-  dedicated.innerHTML = `<strong>Dedicated:</strong> ${temple.dedicated}`;
+    let name = document.createElement("h2");
+    name.textContent = temple.templeName;
 
-  let size = document.createElement("p");
-  size.innerHTML = `<strong>Size:</strong> ${temple.area} sq ft`;
+    let location = document.createElement("p");
+    location.innerHTML = `<strong>Location:</strong> ${temple.location}`;
 
-  let image = Object.assign(document.createElement("img"), {
-    src: temple.imageUrl,
-    alt: `Temple of ${temple.templeName}`,
-    loading: "lazy",
-  });
+    let dedicated = document.createElement("p");
+    dedicated.innerHTML = `<strong>Dedicated:</strong> ${temple.dedicated}`;
 
-  // Append elements to the card
-  templeCard.appendChild(name);
-  templeCard.appendChild(location);
-  templeCard.appendChild(dedicated);
-  templeCard.appendChild(size);
-  templeCard.appendChild(image);
+    let size = document.createElement("p");
+    size.innerHTML = `<strong>Size:</strong> ${temple.area} sq ft`;
 
-  templesdiv.appendChild(templeCard);
+    let image = Object.assign(document.createElement("img"), {
+      src: temple.imageUrl,
+      alt: `Temple of ${temple.templeName}`,
+      loading: "lazy",
+    });
+
+    // Append elements to the card
+    templeCard.appendChild(name);
+    templeCard.appendChild(location);
+    templeCard.appendChild(dedicated);
+    templeCard.appendChild(size);
+    templeCard.appendChild(image);
+
+    templesdiv.appendChild(templeCard);
+  })
+}
+
+//Also display all the temples when clicking "Home" button
+document.querySelector("#homeButton").addEventListener("click", () => {
+  displayAll();
 })
+
+//Display only older temples when clicking "Old" button
+document.querySelector("#oldButton").addEventListener("click", () => {
+  templesdiv.innerHTML = "";
+
+  let olderTemples = temples.filter(temple => {
+    const textYear = temple.dedicated.split(",")[0];
+    const year = parseInt(textYear);
+
+    return year < 1900;
+  })
+
+})
+
+displayAll();
