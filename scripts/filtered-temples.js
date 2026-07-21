@@ -90,3 +90,37 @@ const temples = [
     imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/bahia-blanca-argentina-temple/bahia-blanca-argentina-temple-65191-main.jpg"
   },
 ];
+
+const templesdiv = document.querySelector("#temples")
+
+//Create a card for every temple in the array and append the card to the div element
+temples.forEach( temple => {
+  let templeCard = document.createElement("section");
+
+  let name = document.createElement("h2");
+  name.textContent = temple.templeName;
+
+  let location = document.createElement("p");
+  location.innerHTML = `<strong>Location:</strong> ${temple.location}`;
+
+  let dedicated = document.createElement("p");
+  dedicated.innerHTML = `<strong>Dedicated:</strong> ${temple.dedicated}`;
+
+  let size = document.createElement("p");
+  size.innerHTML = `<strong>Size:</strong> ${temple.area} sq ft`;
+
+  let image = Object.assign(document.createElement("img"), {
+    src: temple.imageUrl,
+    alt: `Temple of ${temple.templeName}`,
+    loading: "lazy",
+  });
+
+  // Append elements to the card
+  templeCard.appendChild(name);
+  templeCard.appendChild(location);
+  templeCard.appendChild(dedicated);
+  templeCard.appendChild(size);
+  templeCard.appendChild(image);
+
+  templesdiv.appendChild(templeCard);
+})
