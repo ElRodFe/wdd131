@@ -94,7 +94,7 @@ const temples = [
 const templesdiv = document.querySelector("#temples")
 
 //Create a card for every temple in the array and append the card to the div element
-function displayAll() {
+function displayTemples(temples) {
 
   templesdiv.innerHTML = "";
 
@@ -132,7 +132,7 @@ function displayAll() {
 
 //Also display all the temples when clicking "Home" button
 document.querySelector("#homeButton").addEventListener("click", () => {
-  displayAll();
+  displayTemples(temples);
 })
 
 //Display only older temples when clicking "Old" button
@@ -146,6 +146,49 @@ document.querySelector("#oldButton").addEventListener("click", () => {
     return year < 1900;
   })
 
+  displayTemples(olderTemples);
+
 })
 
-displayAll();
+//Display only newer temples when clicking "New" button
+document.querySelector("#newButton").addEventListener("click", () => {
+  templesdiv.innerHTML = "";
+
+  let newTemples = temples.filter(temple => {
+    const textYear = temple.dedicated.split(",")[0];
+    const year = parseInt(textYear);
+
+    return year > 2000;
+  })
+
+  displayTemples(newTemples);
+
+})
+
+//Display Larger temples when clicking "Large" button
+document.querySelector("#largeButton").addEventListener("click", () => {
+  templesdiv.innerHTML = "";
+
+  let largeTemples = temples.filter(temple => {
+
+    return temple.area > 90000
+  })
+
+  displayTemples(largeTemples);
+
+})
+
+//Display Smaller temples when clicking "Small" button
+document.querySelector("#smallButton").addEventListener("click", () => {
+  templesdiv.innerHTML = "";
+
+  let largeTemples = temples.filter(temple => {
+
+    return temple.area < 10000
+  })
+
+  displayTemples(largeTemples);
+
+})
+
+displayTemples(temples);
