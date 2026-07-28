@@ -11,6 +11,8 @@
     box-sizing: border-box;
 }
 
+/* GENERAL */
+
 body {
     font-family: "Open Sans", sans-serif;
     background: var(--background);
@@ -25,6 +27,29 @@ header {
     padding: 2rem;
 }
 
+footer {
+    background: var(--accent);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+main {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+main > div {
+    background: white;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+
+/* TYPOGRAPHY */
+
 h1,
 h2,
 h3 {
@@ -36,32 +61,12 @@ h2 {
     margin-bottom: .75rem;
 }
 
-main {
-    max-width: 1100px;
-    margin: auto;
-    padding: 2rem;
-}
-
-main > div {
-    background: white;
-    margin-bottom: 2rem;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,.08);
-}
-
-img {
-    max-width: 100%;
-    display: block;
-    margin: 1rem auto;
-}
-
-.list {
-    padding-left: 1.5rem;
-}
-
-.list li {
+h3 {
     margin-bottom: .5rem;
+}
+
+p {
+    margin-bottom: .75rem;
 }
 
 a {
@@ -73,9 +78,29 @@ a:hover {
     text-decoration: underline;
 }
 
-/* ---------- COLOR PALETTE ---------- */
+/* SITE NAME */
 
-/* ---------- COLOR PALETTE ---------- */
+.siteName {
+    text-align: center;
+}
+
+.siteName img {
+    width: 180px;
+    height: auto;
+    margin-top: 1rem;
+}
+
+/* SCENARIOS */
+
+.list {
+    padding-left: 1.5rem;
+}
+
+.list li {
+    margin-bottom: .5rem;
+}
+
+/* COLOR SCHEMA */
 
 .colorSchema {
     display: flex;
@@ -83,7 +108,7 @@ a:hover {
     gap: 1rem;
 }
 
-.colorSchema p:first-of-type {
+.colorSchema > p {
     margin-bottom: .5rem;
 }
 
@@ -95,72 +120,60 @@ a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    text-align: center;
 }
 
-.colorSchema h3 {
-    margin-bottom: .25rem;
-}
-
-.colorSchema section p {
-    font-weight: 600;
-}
+/* Individual color boxes */
 
 .brightBlue {
-    background-color: var(--primary);
+    background: var(--primary);
     color: white;
 }
 
 .lightBlue {
-    background-color: var(--secondary);
+    background: var(--secondary);
     color: var(--accent);
 }
 
 .darkCharcoal {
-    background-color: var(--accent);
+    background: var(--accent);
     color: white;
 }
 
 .white {
-    background-color: white;
+    background: white;
     color: var(--accent);
-    border: 2px solid #d0d0d0;
+    border: 2px solid #d6d6d6;
 }
 
-/* ---------- TYPOGRAPHY ---------- */
+/* TYPOGRAPHY SECTION */
 
 .typography p {
-    margin-bottom: .75rem;
+    margin-bottom: 1rem;
 }
 
-/* ---------- WIREFRAMES ---------- */
+/* WIREFRAMES */
 
 .wireFrames {
-    display: grid;
-    gap: 2rem;
+    display: block;
 }
 
 .desktop,
 .mobile {
     text-align: center;
+    margin: 2rem;
 }
 
 .desktop img,
 .mobile img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+
     border: 2px solid #ddd;
     border-radius: 8px;
 }
 
-/* ---------- FOOTER ---------- */
-
-footer {
-    background: var(--accent);
-    height: 60px;
-    margin-top: 2rem;
-}
-
-/* ---------- LARGE SCREENS ---------- */
+/* DESKTOP */
 
 @media (min-width: 768px) {
 
@@ -176,6 +189,7 @@ footer {
     }
 
     .wireFrames {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: start;
     }
 }
