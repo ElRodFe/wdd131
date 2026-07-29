@@ -17,13 +17,16 @@
 
     <main>
         <form method="get" action="review.html">
-            <label>Product Name
+            <fieldset id="productName">
+                <label>Product Name
                 <select name="products" id="products">
                     <option value="" disabled>Please Select &#9662;</option>
                 </select>
             </label>
+            </fieldset>
 
-            <label>Overall Rating
+            <fieldset id="overallRating">
+                <label>Overall Rating
                 <div class="stars">
                     <input type="radio" id="fivestar" name="stars" value="5" required><label for="fivestar"></label>
                     <input type="radio" id="fourstar" name="stars" value="4" required><label for="fourstar"></label>
@@ -32,12 +35,33 @@
                     <input type="radio" id="onestar" name="stars" value="1" required><label for="onestar"></label>
                 </div>
             </label>
+            </fieldset>
 
-            <label>Date Of Instalation
+            <fieldset id="instalationDate">
+                <label>Date Of Instalation
                 <input type="date" name="date" required>
             </label>
+            </fieldset>
 
-            
+            <fieldset id="features">
+                <div>Which features did you find useful in the product?</div>
+                <label><input type="checkbox" name="durability" value="yes"> Durability</label>
+                <label><input type="checkbox" name="ease" value="yes"> Ease of Use</label>
+                <label><input type="checkbox" name="performance" value="yes"> Performance</label>
+                <label><input type="checkbox" name="design" value="yes"> Design</label>
+            </fieldset>
+
+           <fieldset id="review">
+                <label>Written Review <span>(Optional)</span>
+                    <textarea id="writtenReview" name="writtenReview"></textarea>
+                </label>
+           </fieldset>
+
+           <fieldset id="yourName">
+                <label>Your Name <span>(Optional)</span>
+                    <input type="text">
+                </label>
+           </fieldset>
         </form>
     </main>
 
