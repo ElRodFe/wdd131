@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Form Example Exercise">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles/form.css">
     <script src="scripts/form.js" defer></script>
 
@@ -17,16 +21,13 @@
 
     <main>
         <form method="get" action="review.html">
-            <fieldset id="productName">
-                <label>Product Name
-                <select name="products" id="products">
-                    <option value="" disabled>Please Select &#9662;</option>
+            <label>Product Name
+                <select name="products" id="products" required>
+                    <option value="" disabled selected>Please Select &#9662;</option>
                 </select>
             </label>
-            </fieldset>
 
-            <fieldset id="overallRating">
-                <label>Overall Rating
+            <label id="rating">Overall Rating
                 <div class="stars">
                     <input type="radio" id="fivestar" name="stars" value="5" required><label for="fivestar"></label>
                     <input type="radio" id="fourstar" name="stars" value="4" required><label for="fourstar"></label>
@@ -35,33 +36,28 @@
                     <input type="radio" id="onestar" name="stars" value="1" required><label for="onestar"></label>
                 </div>
             </label>
-            </fieldset>
 
-            <fieldset id="instalationDate">
-                <label>Date Of Instalation
+            <label id="instalationDate">Date Of Instalation
                 <input type="date" name="date" required>
             </label>
-            </fieldset>
 
-            <fieldset id="features">
-                <div>Which features did you find useful in the product?</div>
+            <div id="features">Which features did you find useful in the product?
+                <p>(Check all that apply)</p>
                 <label><input type="checkbox" name="durability" value="yes"> Durability</label>
                 <label><input type="checkbox" name="ease" value="yes"> Ease of Use</label>
                 <label><input type="checkbox" name="performance" value="yes"> Performance</label>
                 <label><input type="checkbox" name="design" value="yes"> Design</label>
-            </fieldset>
+            </div>
 
-           <fieldset id="review">
-                <label>Written Review <span>(Optional)</span>
-                    <textarea id="writtenReview" name="writtenReview"></textarea>
-                </label>
-           </fieldset>
+            <label>Written Review <span>(Optional)</span>
+                <textarea id="writtenReview" name="writtenReview"></textarea>
+            </label>
 
-           <fieldset id="yourName">
-                <label>Your Name <span>(Optional)</span>
-                    <input type="text">
-                </label>
-           </fieldset>
+            <label>Your Name <span>(Optional)</span>
+                <input type="text" name="name" id="name">
+            </label>
+
+            <input type="submit" value="Make a Review">
         </form>
     </main>
 
