@@ -84,8 +84,13 @@ textarea:focus {
 }
 
 /* Rating section */
+.rating-group {
+    margin-bottom: 1.5rem;
+}
+
 #rating {
-    display: block;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
 }
 
 .stars {
@@ -100,22 +105,26 @@ textarea:focus {
 }
 
 .stars label {
+    cursor: pointer;
     font-size: 2rem;
     color: #d1d5db;
-    cursor: pointer;
-    transition: color 0.2s ease;
 }
 
 .stars label::before {
     content: "★";
 }
 
-/* Color the selected star and all lower-value stars */
-.stars input:checked ~ label {
+/* Keep the selected stars filled */
+.stars label:has(input:checked),
+.stars label:has(input:checked) ~ label {
     color: #fbbf24;
 }
 
-/* Hover effect */
+/* Hover preview */
+.stars:hover label {
+    color: #d1d5db;
+}
+
 .stars label:hover,
 .stars label:hover ~ label {
     color: #fbbf24;
