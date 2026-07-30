@@ -49,3 +49,10 @@ products.forEach((product) => {
 })
 
 //Save completed reviews count into localStorage
+const form = document.querySelector("form");
+
+form.addEventListener("submit", () => {
+    let reviewsCount = Number(localStorage.getItem("reviewsCount")) || 0;
+    reviewsCount++;
+    localStorage.setItem("reviewsCount", reviewsCount);
+});
