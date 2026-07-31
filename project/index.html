@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Final project for WDD131 Dynamic Wweb Fundamentals class.">
+    <meta name="author" content="Elías Rodríguez">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/project.css">
+    <script src="scripts/project.js" defer></script>
+    <title>Cool Car Academy</title>
+</head>
+<body>
+    <header>
+        <img src="images/cool-car-academy-logo.webp" alt="Company Logo">
+        <h1>Cool Car Academy</h1>
+
+        <nav>
+            <a href="">Home</a>
+            <a href="">Learning</a>
+            <a href="">Contact Us</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero">
+            <h2>Stay Cool. <span>Drive Smart.</span></h2>
+            <p>Everything you need to know about your car's A/C system</p>
+            <a class="button" href="learning.html">Let's Start Learning</a>
+
+            <picture>
+                <source srcset="images/hero-img-large.webp" media="(min-width: 1000px)">
+                <source srcset="images/hero-img-medium.webp" media="(min-width: 500px)">
+                <img src="images/hero-img-small.webp" alt="Car and A/C system" width="1500" height="1000">
+            </picture>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-columns">
+            <div class="column">
+                <h3>About Us</h3>
+                <img src="images/cool-car-academy-logo.webp" alt="Company Logo" loading="lazy">
+                <p>Since 2026 providing knowledge about A/C topics.</p>
+            </div>
+
+            <div class="column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="https://github.com/ElRodFe">Developer GitHub page</a></li>
+                    <li><a href="/terms">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>©<span id="currentYear"></span> All Rights Reserved | Cool Car Academy</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+</body>
+</html>
