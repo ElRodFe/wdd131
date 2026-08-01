@@ -1,0 +1,284 @@
+:root {
+    --primary: #1185D1;
+    --secondary: #74C8F4;
+    --accent: #1F2E3E;
+    --background: #FFFFFF;
+    --text: #1F2E3E;
+    --light: #F8FBFD;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* ---------- HEADER ---------- */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: white;
+    border-bottom: 2px solid #e6eef5;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header img {
+    width: 60px;
+    height: auto;
+}
+
+header h1 {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.8rem;
+    color: var(--accent);
+    margin-left: 1rem;
+    flex: 1;
+}
+
+/* Hamburger button */
+
+#menu {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--accent);
+    cursor: pointer;
+    padding: .25rem .5rem;
+}
+
+#menu:hover {
+    color: var(--primary);
+}
+
+/* Mobile navigation */
+
+nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    border-bottom: 2px solid #e6eef5;
+    box-shadow: 0 8px 16px rgba(0,0,0,.08);
+}
+
+nav.open {
+    display: flex;
+    flex-direction: column;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border-top: 1px solid #eef3f7;
+    transition: background .3s ease, color .3s ease;
+}
+
+nav a:hover {
+    background: var(--secondary);
+    color: var(--accent);
+}
+
+/* ---------- HERO ---------- */
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 2rem;
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.hero h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: 2.8rem;
+    line-height: 1.2;
+    color: var(--accent);
+}
+
+.hero h2 span {
+    color: var(--primary);
+}
+
+.hero p {
+    font-size: 1.15rem;
+    color: #44566b;
+    max-width: 500px;
+    margin: 1rem 0 2rem;
+}
+
+.button {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    padding: .9rem 1.8rem;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: background .3s ease, transform .2s ease;
+}
+
+.button:hover {
+    background: #0d6fb0;
+    transform: translateY(-2px);
+}
+
+.hero picture {
+    position: relative;
+    display: block;
+}
+
+.hero picture::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        rgba(17,133,209,.08),
+        rgba(31,46,62,.12)
+    );
+    border-radius: 16px;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0,0,0,.15);
+}
+
+/* ---------- FOOTER ---------- */
+
+footer {
+    background: var(--accent);
+    color: white;
+    margin-top: 4rem;
+}
+
+.footer-columns {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: auto;
+    padding: 3rem 2rem;
+}
+
+.column h3 {
+    font-family: "Poppins", sans-serif;
+    color: var(--secondary);
+    margin-bottom: 1rem;
+}
+
+.column img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.column p {
+    color: #dbe8f2;
+}
+
+.column ul {
+    list-style: none;
+}
+
+.column li {
+    margin-bottom: .75rem;
+}
+
+.column a {
+    color: white;
+    text-decoration: none;
+}
+
+.column a:hover {
+    color: var(--secondary);
+}
+
+.copyright {
+    border-top: 1px solid rgba(255,255,255,.15);
+    text-align: center;
+    padding: 1.25rem;
+    color: #dbe8f2;
+    font-size: .95rem;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (min-width: 768px) {
+
+    /* Desktop navigation */
+
+    #menu {
+        display: none;
+    }
+
+    nav {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        width: auto;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        gap: 1.5rem;
+    }
+
+    nav a {
+        padding: 0;
+        border: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr 1fr;
+        padding: 5rem 2rem;
+    }
+
+    .hero h2 {
+        font-size: 3.5rem;
+    }
+
+    .footer-columns {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 767px) {
+
+    header {
+        flex-wrap: wrap;
+        position: relative;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero {
+        text-align: center;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
