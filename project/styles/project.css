@@ -165,6 +165,104 @@ nav a:hover {
     box-shadow: 0 12px 30px rgba(0,0,0,.15);
 }
 
+/* ---------- LEARNING PAGE MAIN ---------- */
+
+main {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+
+main h2 {
+    font-family: "Poppins", sans-serif;
+    color: var(--accent);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.3rem;
+}
+
+/* ---------- COMPONENT CARDS ---------- */
+
+.componentsDiv {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 4rem;
+}
+
+.componentsDiv section {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,.08);
+    border-top: 5px solid var(--primary);
+    transition: transform .25s ease, box-shadow .25s ease;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    width: 100%;
+}
+
+.componentsDiv section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0,0,0,.12);
+}
+
+.componentsDiv h3 {
+    font-family: "Poppins", sans-serif;
+    color: var(--primary);
+    font-size: 1.35rem;
+}
+
+.componentsDiv p {
+    color: #44566b;
+    margin: 0;
+}
+
+.componentsDiv img {
+    width: 100%;
+    height: auto;
+    max-height: 220px;
+    object-fit: contain;
+    border-radius: 10px;
+    display: block;
+    background: #f8fbfd;
+    padding: .5rem;
+}
+
+/* ---------- DIAGRAM SECTION ---------- */
+
+.diagram {
+    background: var(--light);
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,.08);
+}
+
+.diagram h2 {
+    margin-bottom: 1rem;
+}
+
+.diagram p {
+    max-width: 750px;
+    margin: 0 auto 2rem;
+    color: #44566b;
+}
+
+.diagram img {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    border-radius: 12px;
+    border: 3px solid var(--secondary);
+    box-shadow: 0 10px 25px rgba(0,0,0,.12);
+}
+
 /* ---------- FOOTER ---------- */
 
 footer {
@@ -224,10 +322,9 @@ footer {
 }
 
 /* ---------- RESPONSIVE ---------- */
+
+/* Tablet */
 @media (min-width: 768px) {
-
-    /* Desktop navigation */
-
     #menu {
         display: none;
     }
@@ -257,28 +354,34 @@ footer {
         font-size: 3.5rem;
     }
 
+    .componentsDiv section {
+        width: calc(50% - 1rem);
+    }
+
+    main h2 {
+        font-size: 2.5rem;
+    }
+
+    .diagram {
+        padding: 2.5rem;
+    }
+
     .footer-columns {
         grid-template-columns: 1fr 1fr;
     }
 }
 
-@media (max-width: 767px) {
-
-    header {
-        flex-wrap: wrap;
-        position: relative;
+/* Desktop */
+@media (min-width: 1024px) {
+    .componentsDiv section {
+        width: calc(33.333% - 1.35rem);
     }
 
-    header h1 {
-        font-size: 1.5rem;
+    main h2 {
+        font-size: 2.8rem;
     }
 
-    .hero {
-        text-align: center;
-    }
-
-    .hero p {
-        margin-left: auto;
-        margin-right: auto;
+    .componentsDiv img {
+        max-height: 240px;
     }
 }
