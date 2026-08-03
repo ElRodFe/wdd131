@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Final project for WDD131 Dynamic Wweb Fundamentals class.">
+    <meta name="author" content="Elías Rodríguez">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/project.css">
+    <script src="scripts/project.js" defer></script>
+    <title>Cool Car Academy</title>
+</head>
+<body>
+    <header>
+        <img src="images/cool-car-academy-logo.webp" alt="Company Logo">
+        <h1>Cool Car Academy</h1>
+
+        <button id="menu">☰</button>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="learning.html">Learning</a>
+            <a href="contactus.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <main id="contactMain">
+        <h2>Contact Us!</h2>
+        <p>Please fill in the form and we'll reach out to you.</p>
+
+        <form id="contactForm">
+            <label>Full Name* <input id="name" type="text" name="name" required></label>
+            <label>E-mail* <input id="email" type="email" name="email" placeholder="example@gmail.com" required></label>
+            <label>Phone Number <span>(Optional)</span> <input id="phone" type="tel" name="phone" placeholder="+59892456987"></label>
+            
+            <label>Message <span>(Optional)</span>
+                <textarea id="message" name="message"></textarea>
+            </label>
+
+            <input type="submit" id="sButton" value="Contact">
+        </form>
+    </main>
+
+    <footer>
+        <div class="footer-columns">
+            <div class="column">
+                <h3>About Us</h3>
+                <img src="images/cool-car-academy-logo.webp" alt="Company Logo" loading="lazy">
+                <p>Since 2026 providing knowledge about A/C topics.</p>
+            </div>
+
+            <div class="column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="https://github.com/ElRodFe">Developer's GitHub page</a></li>
+                    <li><a href="index.html">Home Page</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>©<span id="currentYear"></span> All Rights Reserved | Cool Car Academy</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+</body>
+</html>

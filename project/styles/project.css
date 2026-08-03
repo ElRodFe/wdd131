@@ -95,39 +95,42 @@ nav a:hover {
     color: var(--accent);
 }
 
-/* ---------- HERO ---------- */
+/* ---------- HOME PAGE ---------- */
 
-.hero {
-    display: grid;
-    grid-template-columns: 1fr;
-    align-items: center;
-    gap: 2rem;
-    padding: 3rem 2rem;
+#homeMain {
     max-width: 1200px;
-    margin: auto;
+    margin: 0 auto;
+    padding: 3rem 1rem;
 }
 
-.hero h2 {
+#homeMain .hero {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    text-align: center;
+}
+
+#homeMain .hero h2 {
     font-family: "Poppins", sans-serif;
     font-size: 2.8rem;
     line-height: 1.2;
     color: var(--accent);
 }
 
-.hero h2 span {
+#homeMain .hero h2 span {
     color: var(--primary);
 }
 
-.hero p {
-    font-size: 1.15rem;
+#homeMain .hero p {
+    font-size: 1.1rem;
     color: #44566b;
-    max-width: 500px;
-    margin: 1rem 0 2rem;
+    max-width: 600px;
 }
 
-.button {
+#homeMain .button {
     display: inline-block;
-    background: var(--primary);
+    background: var(--accent);
     color: white;
     text-decoration: none;
     padding: .9rem 1.8rem;
@@ -136,28 +139,16 @@ nav a:hover {
     transition: background .3s ease, transform .2s ease;
 }
 
-.button:hover {
+#homeMain .button:hover {
     background: #0d6fb0;
     transform: translateY(-2px);
 }
 
-.hero picture {
-    position: relative;
-    display: block;
+#homeMain picture {
+    width: 100%;
 }
 
-.hero picture::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        rgba(17,133,209,.08),
-        rgba(31,46,62,.12)
-    );
-    border-radius: 16px;
-}
-
-.hero img {
+#homeMain picture img {
     width: 100%;
     height: auto;
     display: block;
@@ -165,34 +156,32 @@ nav a:hover {
     box-shadow: 0 12px 30px rgba(0,0,0,.15);
 }
 
-/* ---------- LEARNING PAGE MAIN ---------- */
+/* ---------- LEARNING PAGE ---------- */
 
-main {
+#learningMain {
     max-width: 1200px;
-    margin: 3rem auto;
-    padding: 0 1rem;
+    margin: 0 auto;
+    padding: 3rem 1rem;
 }
 
-main h2 {
+#learningMain h2 {
     font-family: "Poppins", sans-serif;
     color: var(--accent);
     text-align: center;
-    margin-bottom: 2rem;
     font-size: 2.3rem;
+    margin-bottom: 2rem;
 }
 
 /* ---------- COMPONENT CARDS ---------- */
 
-.componentsDiv {
+#learningMain .componentsDiv {
     display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-    align-items: flex-start;
+    flex-direction: column;
+    gap: 1.5rem;
     margin-bottom: 4rem;
 }
 
-.componentsDiv section {
+#learningMain .componentsDiv section {
     background: white;
     border-radius: 16px;
     padding: 1.5rem;
@@ -203,40 +192,37 @@ main h2 {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-
-    width: 100%;
 }
 
-.componentsDiv section:hover {
+#learningMain .componentsDiv section:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 28px rgba(0,0,0,.12);
 }
 
-.componentsDiv h3 {
+#learningMain .componentsDiv h3 {
     font-family: "Poppins", sans-serif;
     color: var(--primary);
     font-size: 1.35rem;
 }
 
-.componentsDiv p {
+#learningMain .componentsDiv p {
     color: #44566b;
     margin: 0;
 }
 
-.componentsDiv img {
+#learningMain .componentsDiv img {
     width: 100%;
     height: auto;
     max-height: 220px;
     object-fit: contain;
     border-radius: 10px;
-    display: block;
     background: #f8fbfd;
     padding: .5rem;
 }
 
 /* ---------- DIAGRAM SECTION ---------- */
 
-.diagram {
+#learningMain .diagram {
     background: var(--light);
     padding: 2rem;
     border-radius: 16px;
@@ -244,23 +230,155 @@ main h2 {
     box-shadow: 0 8px 20px rgba(0,0,0,.08);
 }
 
-.diagram h2 {
+#learningMain .diagram h2 {
     margin-bottom: 1rem;
 }
 
-.diagram p {
+#learningMain .diagram p {
     max-width: 750px;
     margin: 0 auto 2rem;
     color: #44566b;
 }
 
-.diagram img {
+#learningMain .diagram img {
     width: 100%;
     max-width: 900px;
     height: auto;
     border-radius: 12px;
     border: 3px solid var(--secondary);
     box-shadow: 0 10px 25px rgba(0,0,0,.12);
+}
+
+/* ---------- CONTACT PAGE ---------- */
+
+#contactMain {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+}
+
+#contactMain h2 {
+    font-family: "Poppins", sans-serif;
+    color: var(--accent);
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: .75rem;
+}
+
+#contactMain > p {
+    text-align: center;
+    color: #44566b;
+    margin-bottom: 2rem;
+}
+
+/* ---------- CONTACT FORM ---------- */
+
+#contactMain form {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.08);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#contactMain label {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+#contactMain label span {
+    font-weight: 400;
+    color: var(--text);
+    font-size: .9rem;
+}
+
+#contactMain input[type="text"],
+#contactMain input[type="email"],
+#contactMain input[type="tel"],
+#contactMain textarea {
+    width: 100%;
+    padding: .9rem 1rem;
+    border: 2px solid #d9e3ec;
+    border-radius: 10px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+    color: var(--text);
+    background: #fcfdff;
+    transition: border-color .25s ease, box-shadow .25s ease;
+}
+
+#contactMain input:focus,
+#contactMain textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(17,133,209,.15);
+}
+
+#contactMain textarea {
+    min-height: 180px;
+    resize: vertical;
+}
+
+/* Validation colors */
+
+#contactMain input:required {
+    border-right: 6px solid #ccc;
+}
+
+#contactMain input:required:invalid {
+    border-right: 6px solid #e53935;
+}
+
+#contactMain input:required:valid {
+    border-right: 6px solid #2e7d32;
+}
+
+/* Submit button */
+
+#contactMain #sButton {
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 1rem;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .25s ease, transform .2s ease;
+}
+
+#contactMain #sButton:hover {
+    background: #0d6fb0;
+    transform: translateY(-2px);
+}
+
+#contactMain #sButton:active {
+    transform: translateY(0);
+}
+
+/* ---------- THANK YOU MESSAGE ---------- */
+
+#contactMain .thank-you-message {
+    text-align: center;
+    padding: 2rem;
+}
+
+#contactMain .thank-you-message h3 {
+    font-family: "Poppins", sans-serif;
+    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#contactMain .thank-you-message p {
+    color: #44566b;
+    margin-bottom: .75rem;
 }
 
 /* ---------- FOOTER ---------- */
@@ -322,8 +440,6 @@ footer {
 }
 
 /* ---------- RESPONSIVE ---------- */
-
-/* Tablet */
 @media (min-width: 768px) {
     #menu {
         display: none;
@@ -345,43 +461,72 @@ footer {
         border: none;
     }
 
-    .hero {
-        grid-template-columns: 1fr 1fr;
+    /* Home Page */
+    #homeMain {
         padding: 5rem 2rem;
     }
 
-    .hero h2 {
+    #homeMain .hero {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        gap: 3rem;
+    }
+
+    #homeMain .hero > :first-child {
+        flex: 1;
+    }
+
+    #homeMain picture {
+        flex: 1;
+    }
+
+    #homeMain .hero h2 {
         font-size: 3.5rem;
     }
 
-    .componentsDiv section {
+    #homeMain .hero p {
+        margin: 1rem 0 2rem;
+    }
+
+    /* Learning Page */
+    #learningMain {
+        padding: 4rem 2rem;
+    }
+
+    #learningMain h2 {
+        font-size: 2.6rem;
+    }
+
+    #learningMain .componentsDiv {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    #learningMain .componentsDiv section {
         width: calc(50% - 1rem);
     }
 
-    main h2 {
-        font-size: 2.5rem;
+    #learningMain .diagram {
+        padding: 2.5rem;
     }
 
-    .diagram {
+    /* Conntact Page */
+    #contactMain {
+        padding: 4rem 2rem;
+    }
+
+    #contactMain h2 {
+        font-size: 3rem;
+    }
+
+    #contactMain form {
         padding: 2.5rem;
     }
 
     .footer-columns {
         grid-template-columns: 1fr 1fr;
-    }
-}
-
-/* Desktop */
-@media (min-width: 1024px) {
-    .componentsDiv section {
-        width: calc(33.333% - 1.35rem);
-    }
-
-    main h2 {
-        font-size: 2.8rem;
-    }
-
-    .componentsDiv img {
-        max-height: 240px;
     }
 }

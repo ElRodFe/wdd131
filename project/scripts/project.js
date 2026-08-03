@@ -43,9 +43,12 @@ const components = [{
     imgurl: "images/evaporator.webp",
 }];
 
-const componentsDiv = document.querySelector(".componentsDiv");
+function displayComponents() {
+    const componentsDiv = document.querySelector(".componentsDiv");
 
-components.forEach((component) => {
+    if (!componentsDiv) return;
+
+    components.forEach((component) => {
     let componentCard = document.createElement("section");
 
     let capitalizedName = component.name
@@ -59,9 +62,9 @@ components.forEach((component) => {
     info.textContent = component.info;
 
     let image = Object.assign(document.createElement("img"), {
-      src: component.imgurl,
-      alt: `${capitalizedName} of vehicle A/C system`,
-      loading: "lazy",
+    src: component.imgurl,
+    alt: `${capitalizedName} of vehicle A/C system`,
+    loading: "lazy",
     });
 
     componentCard.appendChild(name);
@@ -69,4 +72,38 @@ components.forEach((component) => {
     componentCard.appendChild(image);
 
     componentsDiv.appendChild(componentCard);
-})
+    })
+}
+
+//Redirect the user to Home Page after submission
+function formSubmit() {
+    const contactForm = document.querySelector("#contactForm");
+
+    if (!contactForm) return;
+
+    contactForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        let submissions = Number(localStorage.getItem("contactSubmissions")) || 0;
+
+        submissions++;
+        localStorage.setItem("contactSubmissions", submissions);
+
+        contactForm.innerHTML = `
+            <div class="thank-you-message">
+                <h3>Thank you!</h3>
+                <p>Your message has been received. We'll get back to you soon.</p>
+                <p>You have contacted us ${submissions} times.
+                <p>Redirecting to the home page...</p>
+            </div>
+        `;
+
+        setTimeout(() => {
+            window.location.href = "index.html";
+        }, 5000);
+    });
+}
+
+//Run functions
+displayComponents();
+formSubmit();
